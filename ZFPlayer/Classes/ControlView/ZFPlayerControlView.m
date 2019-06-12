@@ -80,7 +80,7 @@
 @end
 
 @implementation ZFPlayerControlView
-@synthesize player = _player;
+@synthesize player = _player,didClickClosePlayerCallback;
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
