@@ -51,6 +51,9 @@
 @property (nonatomic, strong) UIImageView *fastImageView;
 /// 加载失败按钮
 @property (nonatomic, strong) UIButton *failBtn;
+//
+@property (nonatomic, strong) UIButton *closePlayerBtn;
+
 /// 底部播放进度
 @property (nonatomic, strong) ZFSliderView *bottomPgrogress;
 /// 封面图
@@ -138,6 +141,14 @@
     min_h = 32;
     self.fastImageView.frame = CGRectMake(min_x, min_y, min_w, min_h);
     
+    min_w = 73;
+    min_h = 28;
+    min_x = min_view_w - 12 - min_w;
+    min_y = 12;
+    
+    self.closePlayerBtn.frame = CGRectMake(min_x, min_y, min_w, min_h);
+
+    
     min_x = 0;
     min_y = self.fastImageView.zf_bottom + 2;
     min_w = self.fastView.zf_width;
@@ -182,6 +193,7 @@
     [self.fastView addSubview:self.fastProgressView];
     [self addSubview:self.bottomPgrogress];
     [self addSubview:self.volumeBrightnessView];
+    [self addSubview:self.closePlayerBtn];
 }
 
 - (void)autoFadeOutControlView {
@@ -804,6 +816,15 @@
 - (void)setBackBtnClickCallback:(void (^)(void))backBtnClickCallback {
     _backBtnClickCallback = [backBtnClickCallback copy];
     self.landScapeControlView.backBtnClickCallback = _backBtnClickCallback;
+}
+
+- (UIButton *)closePlayerBtn {
+    if (!_closePlayerBtn) {
+        _closePlayerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_closePlayerBtn setImage:ZFPlayer_Image(@"new_allPlay_44x44_") forState:UIControlStateNormal];
+    }
+    return _closePlayerBtn;
+    
 }
 
 @end

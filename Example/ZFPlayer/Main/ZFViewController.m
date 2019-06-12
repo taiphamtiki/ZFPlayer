@@ -7,10 +7,8 @@
 //
 
 #import "ZFViewController.h"
-#import "ZFDouYinViewController.h"
 #import "ZFTableSectionModel.h"
-#import "ZFDouyinCollectionViewController.h"
-
+#import "ZFPlayerViewController.h"
 static NSString *kIdentifier = @"kIdentifier";
 
 @interface ZFViewController () <UITableViewDelegate,UITableViewDataSource>
@@ -110,23 +108,8 @@ static NSString *kIdentifier = @"kIdentifier";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    ZFTableItem *itme = self.datas[indexPath.section].items[indexPath.row];
-    NSString *vcString = itme.viewControllerName;
-    UIViewController *viewController = [[NSClassFromString(vcString) alloc] init];
-    if ([vcString isEqualToString:@"ZFDouYinViewController"]) {
-        [(ZFDouYinViewController *)viewController playTheIndex:0];
-    }
-    viewController.navigationItem.title = itme.title;
-    
-    if ([vcString isEqualToString:@"ZFDouyinCollectionViewController"] && [itme.title isEqualToString:@"横向滚动抖音"]) {
-        ZFDouyinCollectionViewController *douyinVC = (ZFDouyinCollectionViewController *)viewController;
-        douyinVC.scrollViewDirection = ZFPlayerScrollViewDirectionHorizontal;
-    }
-    if ([vcString isEqualToString:@"ZFFullScreenViewController"]) {
-        [self.navigationController pushViewController:viewController animated:NO];
-    } else {
-        [self.navigationController pushViewController:viewController animated:YES];
-    }
+    ZFPlayerViewController *vc = [[ZFPlayerViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:true];
 }
 
 - (UITableView *)tableView {

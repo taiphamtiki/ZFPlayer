@@ -68,7 +68,7 @@
         
         [self.bottomToolView addSubview:self.slider];
         [self.bottomToolView addSubview:self.totalTimeLabel];
-        [self addSubview:self.lockBtn];
+//        [self addSubview:self.lockBtn];
         
         // 设置子控件的响应事件
         [self makeSubViewsAction];

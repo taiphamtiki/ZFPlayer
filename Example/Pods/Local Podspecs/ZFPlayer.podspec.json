@@ -19,6 +19,7 @@
     "ios": "7.0"
   },
   "requires_arc": true,
+  "default_subspecs": "Core",
   "subspecs": [
     {
       "name": "Core",
@@ -58,6 +59,9 @@
       "dependencies": {
         "ZFPlayer/Core": [
 
+        ],
+        "IJKMediaFramework": [
+
         ]
       },
       "platforms": {
@@ -70,6 +74,9 @@
       "public_header_files": "ZFPlayer/Classes/KSYMediaPlayer/*.h",
       "dependencies": {
         "ZFPlayer/Core": [
+
+        ],
+        "KSYMediaPlayer": [
 
         ]
       },

@@ -7,7 +7,6 @@
 //
 
 #import "ZFHorizontalCollectionViewController.h"
-#import "ZFCollectionViewCell.h"
 #import "ZFTableData.h"
 #import <ZFPlayer/ZFPlayer.h>
 #import <ZFPlayer/ZFAVPlayerManager.h>

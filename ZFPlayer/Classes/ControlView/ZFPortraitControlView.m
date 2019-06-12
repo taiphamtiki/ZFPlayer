@@ -36,6 +36,7 @@
 @property (nonatomic, strong) UILabel *titleLabel;
 /// 播放或暂停按钮
 @property (nonatomic, strong) UIButton *playOrPauseBtn;
+    
 /// 播放的当前时间 
 @property (nonatomic, strong) UILabel *currentTimeLabel;
 /// 滑杆
@@ -57,6 +58,7 @@
         [self addSubview:self.topToolView];
         [self addSubview:self.bottomToolView];
         [self addSubview:self.playOrPauseBtn];
+
         [self.topToolView addSubview:self.titleLabel];
         [self.bottomToolView addSubview:self.currentTimeLabel];
         [self.bottomToolView addSubview:self.slider];
@@ -186,6 +188,8 @@
     min_h = min_w;
     self.playOrPauseBtn.frame = CGRectMake(min_x, min_y, min_w, min_h);
     self.playOrPauseBtn.center = self.center;
+    
+
     
     min_x = min_margin;
     min_w = 62;
@@ -342,6 +346,7 @@
     return _playOrPauseBtn;
 }
 
+
 - (UILabel *)currentTimeLabel {
     if (!_currentTimeLabel) {
         _currentTimeLabel = [[UILabel alloc] init];
@@ -356,10 +361,10 @@
     if (!_slider) {
         _slider = [[ZFSliderView alloc] init];
         _slider.delegate = self;
-        _slider.maximumTrackTintColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.8];
+        _slider.maximumTrackTintColor = [UIColor colorWithRed:112/255.f green:112/255.f blue:112/255.f alpha:0.8];
         _slider.bufferTrackTintColor  = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.5];
-        _slider.minimumTrackTintColor = [UIColor whiteColor];
-        [_slider setThumbImage:ZFPlayer_Image(@"ZFPlayer_slider") forState:UIControlStateNormal];
+        _slider.minimumTrackTintColor = [UIColor colorWithRed:27/255.f green:168/255.f blue:255/255.f alpha:1];
+        [_slider setThumbImage:ZFPlayer_Image(@"") forState:UIControlStateNormal];
         _slider.sliderHeight = 2;
     }
     return _slider;

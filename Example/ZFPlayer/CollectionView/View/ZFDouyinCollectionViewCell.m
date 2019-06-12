@@ -6,7 +6,6 @@
 //  Copyright © 2019 紫枫. All rights reserved.
 //
 
-#import "ZFDouyinCollectionViewCell.h"
 #import <ZFPlayer/UIImageView+ZFCache.h>
 #import <ZFPlayer/UIView+ZFFrame.h>
 #import <ZFPlayer/UIImageView+ZFCache.h>
