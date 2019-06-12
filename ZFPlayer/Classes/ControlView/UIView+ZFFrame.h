@@ -25,7 +25,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIView (ZFFrame)
-
 @property (nonatomic) CGFloat zf_x;
 @property (nonatomic) CGFloat zf_y;
 @property (nonatomic) CGFloat zf_width;
