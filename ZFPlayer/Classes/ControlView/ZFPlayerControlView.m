@@ -821,10 +821,17 @@
 - (UIButton *)closePlayerBtn {
     if (!_closePlayerBtn) {
         _closePlayerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_closePlayerBtn setImage:ZFPlayer_Image(@"new_allPlay_44x44_") forState:UIControlStateNormal];
+        [_closePlayerBtn addTarget:self action:@selector(didClickClosePlayer:) forControlEvents:(UIControlEventTouchUpInside)];
+        [_closePlayerBtn setImage:ZFPlayer_Image(@"btn_close_player") forState:UIControlStateNormal];
     }
     return _closePlayerBtn;
+}
     
+- (void)didClickClosePlayer:(UIButton *)button {
+    NSLog(@"didClickClosePlayer");
+    if (self.didClickClosePlayer != nil) {
+        self.didClickClosePlayer();
+    }
 }
 
 @end

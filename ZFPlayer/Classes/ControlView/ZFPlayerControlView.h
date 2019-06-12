@@ -83,6 +83,9 @@
 
 /// 返回按钮点击回调
 @property (nonatomic, copy) void(^backBtnClickCallback)(void);
+    
+@property (nonatomic, copy, nullable) void(^didClickClosePlayer)(void);
+
 
 /// 控制层显示或者隐藏
 @property (nonatomic, readonly) BOOL controlViewAppeared;

@@ -38,7 +38,9 @@
     /// player的tag值必须在cell里设置
     self.player = [[ZFPlayerController alloc] initWithPlayerManager:playerManager containerView:self.imageView];
     self.player.controlView = self.controlView;
-    
+    self.controlView.didClickClosePlayer = ^{
+        self.player.currentPlayerManager.stop;
+    };
     NSString *URLString = [@"http://flv3.bn.netease.com/tvmrepo/2018/6/H/9/EDJTRBEH9/SD/EDJTRBEH9-mobile.mp4" stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     playerManager.assetURL = [NSURL URLWithString:URLString];
     self.player.shouldAutoPlay = YES;
