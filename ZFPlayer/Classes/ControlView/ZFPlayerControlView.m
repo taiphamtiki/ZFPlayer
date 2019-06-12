@@ -829,11 +829,11 @@
     
 - (void)didClickClosePlayer:(UIButton *)button {
     NSLog(@"didClickClosePlayer");
-    if (self.didClickClosePlayer != nil) {
-        self.didClickClosePlayer();
+    if (self.didClickClosePlayerCallback != nil) {
+        self.didClickClosePlayerCallback();
     }
 }
-- (void)setDidClickClosePlayer:(void (^)(void))didClickClosePlayer {
-    _didClickClosePlayer = [didClickClosePlayer copy];
+- (void)closePlayerCallback:(void (^)(void))didClickClosePlayer {
+    _didClickClosePlayerCallback = [didClickClosePlayer copy];
 }
 @end

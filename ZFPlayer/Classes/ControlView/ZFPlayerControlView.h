@@ -84,7 +84,7 @@
 /// 返回按钮点击回调
 @property (nonatomic, copy) void(^backBtnClickCallback)(void);
     
-@property (nonatomic, copy, nullable) void(^didClickClosePlayer)(void);
+@property (nonatomic, copy) void(^didClickClosePlayerCallback)(void);
 
 
 /// 控制层显示或者隐藏
@@ -143,5 +143,7 @@
  重置控制层
  */
 - (void)resetControlView;
+    
+- (void)closePlayerCallback:(void (^)(void))didClickClosePlayer;
 
 @end
