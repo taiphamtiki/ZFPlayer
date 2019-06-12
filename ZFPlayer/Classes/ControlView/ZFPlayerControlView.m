@@ -834,6 +834,6 @@
     }
 }
 - (void)closePlayerCallback:(void (^)(void))didClickClosePlayer {
-    _didClickClosePlayerCallback = [didClickClosePlayer copy];
+    didClickClosePlayerCallback = [didClickClosePlayer copy];
 }
 @end
