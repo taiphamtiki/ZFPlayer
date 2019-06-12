@@ -833,5 +833,7 @@
         self.didClickClosePlayer();
     }
 }
-
+- (void)setDidClickClosePlayer:(void (^)(void))didClickClosePlayer {
+    _didClickClosePlayer = [didClickClosePlayer copy];
+}
 @end
